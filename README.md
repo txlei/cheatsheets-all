@@ -25,11 +25,11 @@ git add -u .
 git commit -m "your comments"
 git push -u <repo> --all
 
-# handling mutliple brances
-git checkout <origin>
-git pull <origin>
-git merge <dev>
-git push <origin>
+# handling multiple branches
+git checkout master
+git pull origin master
+git merge origin <dev-repo>
+git push origin master
 
 #configurations
 git config --global user.email "you@example.com"
