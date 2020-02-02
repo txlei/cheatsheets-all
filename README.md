@@ -71,6 +71,7 @@ docker-compose up -d
 docker-compose up <container-name>
 
 docker exec -it <container-name> bash
+docker logs -f <container-name>
 
 docker run -d -p <HOST_PORT>:<CONTAINER_PORT> --hostname <HOSTNAME> --name <CONTAINER_NAME> <DOCKER_IMAGE>
 docker stop <CONTAINER_NAME> || true && docker rm <CONTAINER_NAME> || true
