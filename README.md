@@ -4,7 +4,7 @@
   - [Git and Github](#git-and-github)
   - [MongoDB](#mongodb)
   - [JAVA/ MAVEN](#java-maven)
-  - [DOCKER](#docker)
+  - [Docker and Docker-compose](#docker-and-docker-compose)
     - [Run Individual Microservice](#run-individual-microservice)
 
 ## Git and Github
@@ -60,7 +60,7 @@ mvn clean package -Dmaven.clean.failOnError=false
 mvn clean install
 ```
 
-## DOCKER
+## Docker and Docker-compose
 
 ```
 docker rm $(docker ps -a -q)
@@ -68,9 +68,13 @@ docker rmi $(docker images -a -q)
 
 docker-compose build
 docker-compose up -d
-docker-compose -f docker-compose.yml up mongodb
+docker-compose up <container-name>
 
-docker exec -it mongodb bash
+docker exec -it <container-name> bash
+
+docker run -d -p <HOST_PORT>:<CONTAINER_PORT> --hostname <HOSTNAME> --name <CONTAINER_NAME> <DOCKER_IMAGE>
+docker stop <CONTAINER_NAME> || true && docker rm <CONTAINER_NAME> || true
+
 ```
  
 ### Run Individual Microservice
