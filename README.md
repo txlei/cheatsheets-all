@@ -24,6 +24,7 @@ git status
 git add -u . 
 git commit -m "your comments"
 git push -u <repo> --all
+git push origin <branch-name> #push to branch
 
 # handling multiple branches
 git checkout master
