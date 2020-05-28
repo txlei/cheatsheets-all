@@ -6,6 +6,7 @@
   - [JAVA/ MAVEN](#java-maven)
   - [Docker and Docker-compose](#docker-and-docker-compose)
     - [Run Individual Microservice](#run-individual-microservice)
+  - [npm & nodejs](#npm--nodejs)
 
 ## Git and Github
 
@@ -38,6 +39,9 @@ git config --global user.name "Your Name"
 git remote -v
 git remote rm origin
 git remote add <name> <url> 
+git show --oneline -s
+git rev-parse HEAD
+git status
 ```
 
 ## MongoDB
@@ -91,3 +95,10 @@ Run the image
 docker run -p 49160:8082 -d <your username>/node-web-app
 ```
 In the example above, Docker mapped the 8082 port inside of the container to the port 49160 on your machine.
+
+## npm & nodejs
+
+give permission to do npm install -g
+```
+sudo chown -R $USER /usr/local/lib/node_modules
+```
