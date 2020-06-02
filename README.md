@@ -27,6 +27,10 @@ git commit -m "your comments"
 git push -u <repo> --all
 git push origin <branch-name> #push to branch
 
+# pull commit regardless of local changes
+git fetch --all
+git reset --hard origin/<branch-name>
+
 # handling multiple branches
 git checkout master
 git pull origin master
