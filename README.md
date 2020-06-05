@@ -67,6 +67,7 @@ java -jar target/test-0.0.1-SNAPSHOT.jar --dsq.port="8082"
 mvn spring-boot:run
 mvn clean package -Dmaven.clean.failOnError=false
 mvn clean install
+mvn install -DskipTests
 ```
 
 ## Docker and Docker-compose
