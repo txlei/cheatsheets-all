@@ -46,6 +46,43 @@ git remote add <name> <url>
 git show --oneline -s
 git rev-parse HEAD
 git status
+
+# merge <branch/          MERGE_HEAD/ --theirs/ remote > 
+# into  <target-branch/   HEAD/       --ours /  local>
+git fetch origin
+git checkout <HEAD> 
+git merge --no-ff <MERGE_HEAD> 
+git pull origin <HEAD> 
+git push origin <HEAD>
+
+# view all merge conflicts
+git diff --name-only --diff-filter=U
+git diff --check
+
+#to select the changes done in HEAD (existing)
+git checkout --ours <file-name> 
+#to select the changes done in merging branch (incoming)
+git checkout --theirs <file-name> 
+
+### DETACHED HEAD
+git checkout -b temp 
+git diff <remote-branch> temp
+git diff origin/<remote-branch> temp
+git branch -f <remote-branch> temp
+git checkout origin/<remote-branch>
+git branch -d temp
+
+### UNDO 
+#Discard all local changes, but save them for possible re-use later
+git stash
+#Discarding local changes (permanently) to a file
+git checkout -- <file> 
+#Discard all local changes to all files permanently
+git reset --hard 
+
+#delete remote branch
+git branch -a
+git push origin --delete <target-branch>
 ```
 
 ## MongoDB
@@ -61,13 +98,18 @@ db.counter.insert( { _id: "counterId" , seq: 0 } )    
 ```
 
 ## JAVA/ MAVEN
-```
+
+```bash
 java -jar target/epod-0.0.1-SNAPSHOT.jar
 java -jar target/test-0.0.1-SNAPSHOT.jar --dsq.port="8082"
 mvn spring-boot:run
 mvn clean package -Dmaven.clean.failOnError=false
 mvn clean install
 mvn install -DskipTests
+
+#run
+java -jar target<project-name-...-SNAPSHOT.jar>
+
 ```
 
 ## Docker and Docker-compose
