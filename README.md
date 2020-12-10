@@ -47,13 +47,20 @@ git show --oneline -s
 git rev-parse HEAD
 git status
 
-# merge <branch/          MERGE_HEAD/ --theirs/ remote > 
+# merge <branch/          MERGE_HEAD/ --theirs/ remote>
 # into  <target-branch/   HEAD/       --ours /  local>
 git fetch origin
 git checkout <HEAD> 
 git merge --no-ff <MERGE_HEAD> 
 git pull origin <HEAD> 
 git push origin <HEAD>
+
+# overwriting before merge conflicts using ours strategy
+git checkout LOCAL_BRANCH_NAME
+git merge -s ours REMOTE_BRANCH_NAME
+git checkout REMOTE_BRANCH_NAME
+git merge LOCAL_BRANCH_NAME
+git push origin LOCAL_BRANCH_NAME
 
 # view all merge conflicts
 git diff --name-only --diff-filter=U
