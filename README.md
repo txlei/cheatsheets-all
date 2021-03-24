@@ -90,11 +90,13 @@ git reset --hard
 #delete remote branch
 git branch -a
 git push origin --delete <target-branch>
-```
 
 #check commits ahead of behind
 git log feature..origin/feature
 git rev-list --count feature..origin/feature
+```
+
+
 
 ## MongoDB
 
